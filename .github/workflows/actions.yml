@@ -15,8 +15,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: Jellyfin Install
         run: |
-          sudo apt-get install -y xvfb
-          sudo apt-get install -y libegl-mesa0
-          https://download-installer.cdn.mozilla.net/pub/firefox/releases/89.0/linux-x86_64/en-GB/firefox-89.0.tar.bz2
-          tar xjf firefox-*.tar.bz2
-          sudo xvfb-run ~/firefox/firefox --new-window https://google.com
+          sudo apt update && sudo apt install xfce4
+          sudo apt install firefox
+          firefox --help
