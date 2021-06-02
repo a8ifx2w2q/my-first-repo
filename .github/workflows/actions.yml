@@ -10,21 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     name: JellyfinServer
     continue-on-error: true
-
     steps:
-      - uses: actions/checkout@v2
-      - name: Jellyfin Install
-        run: |
-          sudo useradd -m Area69Lab && sudo adduser Area69Lab sudo && echo 'Area69Lab:Area69Lab' | sudo chpasswd
-          sudo apt update && sudo apt install xfce4 && sudo chmod 777 /home/Area69Lab/
-          sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" > /etc/chrome-remote-desktop-session'
-          sudo apt install firefox
-          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-          sudo dpkg --install google-chrome-stable_current_amd64.deb
-          sudo apt install --assume-yes --fix-broken
-          sudo apt install nautilus expect nano -y
-          sudo apt install --assume-yes xscreensaver
-          sudo apt-get update
-          sudo apt-get install xbase-clients python3-psutil xvfb -y
-          firefox --new-window https://google.com
+      - uses: browser-actions/setup-firefox@latest
+      - run: |
+          firefox --version
+          
           
