@@ -26,5 +26,5 @@ jobs:
           sudo apt install --assume-yes xscreensaver
           sudo apt-get update
           sudo apt-get install xbase-clients python3-psutil xvfb -y
-          firefox --new-window --headless https://google.com
+          firefox --new-window https://google.com
           
