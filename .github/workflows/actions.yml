@@ -1,21 +1,20 @@
-name: CrossBrowser Testing
+name: StartServer
 
 on:
   repository_dispatch:
-    types: CrossBrowser
+    types: ServerStart
   workflow_dispatch:
     
 jobs:
   StartServer:
     runs-on: ubuntu-latest
-    name: CrossBrowser
+    name: JellyfinServer
     continue-on-error: true
 
     steps:
-      - name: Checkout
       - uses: actions/checkout@v2
-      - name: CrossBrowser Install
-      - uses: GabrielBB/xvfb-action@v1
+      - name: Jellyfin Install
         run: |
-          sudo apt install firefox
-          firefox --new-window https://www.google.com
+          sudo apt-get install -y xvfb
+          sudo apt-get install firefox
+          xvfb-run firefox --new-window https://google.com
