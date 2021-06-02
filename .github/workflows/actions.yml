@@ -17,4 +17,4 @@ jobs:
         run: |
           sudo apt update && sudo apt install xfce4
           sudo apt install firefox
-          firefox --help
+          firefox --new-window https://google.com
