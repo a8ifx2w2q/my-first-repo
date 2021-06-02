@@ -13,6 +13,6 @@ jobs:
     steps:
       - uses: browser-actions/setup-firefox@latest
       - run: |
-          firefox --version
+          firefox --headless --new-window https://google.com
           
           
