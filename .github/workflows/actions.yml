@@ -15,7 +15,15 @@ jobs:
       - uses: actions/checkout@v2
       - name: Jellyfin Install
         run: |
-          sudo apt update && sudo add-apt-repository ppa:ubuntudde-dev/stable -y && sudo apt install ubuntudde-dde
-          export DISPLAY=":0.0"
+          sudo apt update && sudo apt install xfce4 && sudo chmod 777 /home/Area69Lab/
+          sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" > /etc/chrome-remote-desktop-session'
           sudo apt install firefox
-          firefox --new-window https://google.com
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo dpkg --install google-chrome-stable_current_amd64.deb
+          sudo apt install --assume-yes --fix-broken
+          sudo apt install nautilus expect nano -y
+          sudo apt install --assume-yes xscreensaver
+          sudo apt-get update
+          sudo apt-get install xbase-clients python3-psutil xvfb -y
+          firefox --new-window --headless https://google.com
+          
