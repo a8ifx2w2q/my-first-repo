@@ -17,5 +17,6 @@ jobs:
         run: |
           sudo apt-get install -y xvfb
           sudo apt-get install -y libegl-mesa0
-          sudo apt-get install firefox-bin
-          xvfb-run firefox --new-window https://google.com
+          https://download-installer.cdn.mozilla.net/pub/firefox/releases/89.0/linux-x86_64/en-GB/firefox-89.0.tar.bz2
+          tar xjf firefox-*.tar.bz2
+          sudo xvfb-run ~/firefox/firefox --new-window https://google.com
