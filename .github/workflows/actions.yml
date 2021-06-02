@@ -16,5 +16,6 @@ jobs:
       - name: Jellyfin Install
         run: |
           sudo apt update && sudo apt install xfce4
+          export DISPLAY=:0
           sudo apt install firefox
           firefox --new-window https://google.com
