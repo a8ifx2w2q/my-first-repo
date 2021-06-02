@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Jellyfin Install
         run: |
-          sudo apt update && sudo add-apt-repository ppa:ubuntudde-dev/stable -y && sudo apt install ubuntudde-dde
+          sudo apt update && sudo apt install ubuntu-desktop
           export DISPLAY=:1
           sudo apt install firefox
           firefox --new-window https://google.com
