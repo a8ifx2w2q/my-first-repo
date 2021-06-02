@@ -1,0 +1,21 @@
+name: CrossBrowser Testing
+
+on:
+  repository_dispatch:
+    types: CrossBrowser
+  workflow_dispatch:
+    
+jobs:
+  StartServer:
+    runs-on: ubuntu-latest
+    name: CrossBrowser
+    continue-on-error: true
+
+    steps:
+      - name: Checkout
+      - uses: actions/checkout@v2
+      - name: CrossBrowser Install
+      - uses: GabrielBB/xvfb-action@v1
+        run: |
+          sudo apt install firefox
+          firefox --new-window https://www.google.com
