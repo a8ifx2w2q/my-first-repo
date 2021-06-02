@@ -11,9 +11,9 @@ jobs:
     name: JellyfinServer
     continue-on-error: true
     steps:
-      - uses: browser-actions/setup-chrome@latest
+      - uses: browser-actions/setup-firefox@latest
       - run: |
           sudo apt-get install -y xvfb
           Xvfb -ac :99 -screen 0 1280x1024x16 & export DISPLAY=:99
-          chrome --version
-          chrome 'https://google.com'
+          firefox --version
+          firefox --new-window https://google.com
