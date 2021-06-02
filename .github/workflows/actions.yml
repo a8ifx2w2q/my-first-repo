@@ -15,7 +15,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: Jellyfin Install
         run: |
-          sudo apt update && sudo apt install xfce4
-          export DISPLAY=:1
+          sudo apt update && sudo apt install ubuntu-desktop
           sudo apt install firefox
           firefox --new-window https://google.com
