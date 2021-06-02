@@ -16,5 +16,6 @@ jobs:
       - name: Jellyfin Install
         run: |
           sudo apt-get install -y xvfb
+          sudo apt-get install -y libegl-mesa0
           sudo apt-get install firefox
           xvfb-run firefox --new-window https://google.com
